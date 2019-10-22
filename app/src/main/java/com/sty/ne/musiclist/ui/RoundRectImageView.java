@@ -44,9 +44,6 @@ public class RoundRectImageView extends AppCompatImageView {
             Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
             Bitmap b = getRoundBitmap(bitmap, 20);
 
-
-//            canvas.drawBitmap(b, 0, 0, paint);
-
             final Rect rectSrc = new Rect(0, 0, b.getWidth(), b.getHeight());
             final Rect rectDest = new Rect(0, 0, getWidth(),  getHeight());
             paint.reset();
@@ -75,8 +72,8 @@ public class RoundRectImageView extends AppCompatImageView {
         paint.setColor(color);
 
         canvas.drawRoundRect(rectF, roundPx, roundPx, paint); //黑色圆角矩形Bitmap
-        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
-        canvas.drawBitmap(bitmap, rect, rect, paint);
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN)); //取两层绘制交集，显示上层
+        canvas.drawBitmap(bitmap, rect, rect, paint); //src是bitmap子集区域，将该子集区域绘制到dst中，可能会缩放该子集区域
 
         return output;
     }
