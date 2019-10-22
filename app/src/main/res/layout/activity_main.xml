@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sty.ne.musiclist.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.sty.ne.musiclist.ui.RoundRectImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/poster"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="160dp"/>
+        <ListView
+            android:id="@+id/list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"
+            android:divider="@null"
+            android:scrollbars="none"
+            android:visibility="gone"/>
+
+        <FrameLayout
+            android:id="@+id/fl_layout_float"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true">
+            <LinearLayout
+                android:id="@+id/ll_layout_float"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="?attr/actionBarSize"
+                android:background="@drawable/shape_white"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="播放全部"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+        </FrameLayout>
+    </RelativeLayout>
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        app:navigationIcon="@drawable/icon_back"
+        app:popupTheme="@style/OverflowMenuStyle"
+        app:subtitleTextAppearance="@style/Theme.Toolbar.SubTitle"
+        app:titleTextAppearance="@style/Theme.Toolbar.Title"/>
+
+</FrameLayout>
