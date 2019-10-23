@@ -9,12 +9,6 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <com.sty.ne.musiclist.ui.RoundRectImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/poster"
-            android:layout_marginLeft="80dp"
-            android:layout_marginTop="160dp"/>
         <ListView
             android:id="@+id/list_view"
             android:layout_width="match_parent"
@@ -22,7 +16,7 @@
             android:background="@color/colorWhite"
             android:divider="@null"
             android:scrollbars="none"
-            android:visibility="gone"/>
+            android:visibility="visible"/>
 
         <FrameLayout
             android:id="@+id/fl_layout_float"
