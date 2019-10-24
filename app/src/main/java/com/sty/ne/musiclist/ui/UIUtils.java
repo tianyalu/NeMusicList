@@ -43,7 +43,8 @@ public class UIUtils {
         DisplayMetrics displayMetrics = new DisplayMetrics();
         if(displayMetricsWidth == 0.0f || displayMetricsHeight == 0.0f) {
             //在这里得到设备的真实值
-            windowManager.getDefaultDisplay().getMetrics(displayMetrics);
+            windowManager.getDefaultDisplay().getMetrics(displayMetrics); //真实高度（不包含底部导航栏）
+            //windowManager.getDefaultDisplay().getRealMetrics(displayMetrics); //真实高度（包含底部导航栏）
             //判断横屏还是竖屏
             if(displayMetrics.widthPixels > displayMetrics.heightPixels) {
                 this.displayMetricsWidth = displayMetrics.heightPixels;
@@ -92,10 +93,12 @@ public class UIUtils {
     }
 
     public int getWidth(int width) {
+        //向上取整
         return Math.round((float) width * this.displayMetricsWidth / STANDARD_WIDTH);
     }
 
     public int getHeight(int height) {
+        //向上取整
         return Math.round((float) height * this.displayMetricsHeight / STANDARD_HEIGHT);
     }
 
